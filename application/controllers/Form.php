@@ -21,12 +21,10 @@ class Form extends CI_Controller {
 	 */
 	public function index()
 	{
-
-		$this->load->model('user_model');
 		//show data
+		$this->load->model('user_model');
 		$data['query'] = $this->user_model->get_users();
 		$this->load->view('accueil', $data);
-
 	}
 
 	public function add_user()
@@ -34,7 +32,6 @@ class Form extends CI_Controller {
 		//Insert
 		$this->load->model('user_model');
 		$this->user_model->insert_users();
-
 	}
 
 	public function del_user()
@@ -44,5 +41,4 @@ class Form extends CI_Controller {
 		$this->user_model->delete_users();
 
 	}
-
 }

@@ -22,13 +22,14 @@ class User_model extends CI_Model {
             $this->db->insert('users', $this);
         }
     }
-
+    //function afficher user
     public function get_users()
     {
+        $this->db->order_by("id", "DESC");
         $query = $this->db->get('users');
         return $query->result();
     }
-
+    //function delete users
     public function delete_users()
     {
         if(!empty($_POST)){ 
